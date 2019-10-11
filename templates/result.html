@@ -1,57 +1,129 @@
 <!DOCTYPE html>
-<html>
-<head>
-<style>
-input.MyButton {
-width: 300px;
-padding: 20px;
-cursor: pointer;
-font-weight: bold;
-font-size: 150%;
-background: #3366cc;
-color: #fff;
-border: 1px solid #3366cc;
-border-radius: 10px;
-}
-input.MyButton:hover {
-color: #ffff00;
-background: #000;
-border: 1px solid #fff;
-}
-</style>
-	<title></title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
-</head>
-<style>
+<html class="no-js" lang="zxx">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Sumon Rahman" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title -->
+    <title>Appy App Landing Template.</title>
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
+    <!-- Plugin-CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/owl.carousel.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/linearicons.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Dekko&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/magnific-popup.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/animate.css') }}"
+    />
+    <!-- Main-Stylesheets -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/normalize.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/responsive.css') }}"
+    />
+    <script src="{{ url_for('static', filename='js/vendor/modernizr-2.8.3.min.js') }}"></script>
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-body {
-    background-color: #ffd480
-}
-</style>
-<body>
+  <body data-spy="scroll" data-target=".mainmenu-area">
+    <!-- Preloader-content -->
+    <div class="preloader">
+      <span><i class="lnr lnr-sun"></i></span>
+    </div>
+    <!-- Home-Area -->
+    <header class="home-area overlay angle" id="home_page">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 hidden-sm col-md-5">
+            <figure class="mobile-image wow fadeInUp" data-wow-delay="0.2s">
+              <img
+                src="{{ url_for('static', filename='images/progress-phone.png') }}"
+                alt=""
+              />
+            </figure>
+          </div>
+          <div class="col-xs-12 col-md-7" style="text-align: center">
+            <div class="space-80 hidden-xs"></div>
 
-	<header>
-		<div class="container">
-		<div id="brandname">
-		</div>
-		<h2>SMS Spam Detector</h2>
-		
-	</div>
-	</header>
-	<div class="results">
-
-
-		
-	{% if prediction == 1%}
-	<h2 style="color:red;">Spam</h2>
-	{% elif prediction == 0%}
-	<h2 style="color:green;">Not a Spam</h2>
-	{% endif %}
-	<br></br>
-	<form>
-<input class="MyButton" type="button" value="Back" onclick="window.location.href='http://127.0.0.1:5000'" />
-</form>
-	</div>
-
-</body>
+            <div class="space-20"></div>
+            <div class="results">
+              <div class="col-xs-12">
+                <div class="subscribe-form text-center">
+                  {% if prediction == 1%}
+                  <img
+                    style="width: 20%;"
+                    src="{{url_for('static', filename='images/spam.png')}}"
+                  />
+                  <h1 style="font-family: Dekko;color:darkred;">Spam</h1>
+                  {% elif prediction == 0%}
+                  <img
+                    style="width: 20%;"
+                    src="{{url_for('static', filename='images/ham.png')}}"
+                  />
+                  <h1 style="font-family: Dekko;color:darkgreen;">Ham</h1>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="space-20"></div>
+            </div>
+            <a href="/">
+              <button
+                type="submit"
+                class="bttn-white wow fadeInUp"
+                data-wow-delay="0.8s"
+              >
+                Back
+              </button></a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Home-Area-End -->
+    <!--Vendor-JS-->
+    <script src="{{ url_for('static', filename='js/vendor/jquery-1.12.4.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/jquery-ui.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/bootstrap.min.js') }}"></script>
+    <!--Plugin-JS-->
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/contact-form.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/ajaxchimp.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scrollUp.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/magnific-popup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+    <!--Main-active-JS-->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
 </html>
